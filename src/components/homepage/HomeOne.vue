@@ -15,18 +15,15 @@
     .hp1-message{
         text-transform: uppercase;
         color: rgb(255,255,255);
-        width: 50%;
         margin-right: auto;
         margin-left: auto;
-        height: 40%;
     }
 
     h1 {
-        margin-top: 40%;
         font-size: 4.0rem;
         font-weight: 300;
         letter-spacing: 1px;
-        margin-bottom: 0;
+        margin-bottom: 3%;
         text-align: center;
     }
 
@@ -40,7 +37,6 @@
         font-weight: 200;
         letter-spacing: 1px;
         margin-top: 1%;
-        margin-bottom: 39%;
         text-align: center;
     }
 </style>

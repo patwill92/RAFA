@@ -11,6 +11,9 @@
         opacity: 1;
         font-size: 2.0rem;
         margin: 0;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
     }
     .bounce {
         -moz-animation: bounce 2s infinite;

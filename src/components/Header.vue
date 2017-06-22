@@ -24,11 +24,11 @@
         justify-content: space-between;
         width: 100%;
         background-color: transparent;
-        position: fixed;
         border-bottom: 0.5px solid white;
         align-items: center;
         height: 90px;
         transition: height .5s, background-color .5s;
+        position: fixed;
     }
 
     .navbar .nav-left{
@@ -49,14 +49,14 @@
 
     .nav-scroll{
         width: 100%;
-        background-color: rgba(0, 71, 126, 1.0);
+        background-color: rgb(0, 71, 126);
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 70px;
         border-bottom: 0.5px solid rgba(217,217,217,0.5);
-        position: fixed;
         transition: height .5s, background-color .5s;
+        position: fixed;
     }
 
     .nav-scroll a{
