@@ -47,8 +47,7 @@
         props: ['height', 'width'],
         data(){
             return {
-                data: panel3,
-                active: false
+                data: panel3
             }
         }
     }
