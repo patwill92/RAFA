@@ -1,27 +1,24 @@
 <template>
-    <app-home></app-home>
+    <router-view></router-view>
 </template>
 
 <script>
     import Home from './components/Home.vue';
+    import images from './data/home/images.js';
 
     export default {
         components: {
-            appHome: Home
+            Home
         }
     }
 </script>
 
 <style>
-    html{
-        width: 100%;
-        min-height: 100%;
-    }
-
     body{
         margin: 0;
-        width: 100%;
-        height: 100%;
         font-family: Roboto;
+        background-image: url('../dist/home.jpg');
+        background-size: cover;
+        background-attachment: fixed;
     }
 </style>
