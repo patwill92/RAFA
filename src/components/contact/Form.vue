@@ -167,7 +167,6 @@
         font-size: 16px;
         resize: none;
         font-family: Roboto;
-        color: #ccc;
     }
 
     label{
