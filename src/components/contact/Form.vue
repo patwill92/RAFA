@@ -110,7 +110,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 
     p{
         color: #555555;
