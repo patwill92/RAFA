@@ -1,21 +1,23 @@
 <template>
-    <div class="home-container">
-        <app-header :scroll="scrolled" :height="windowHeight" :width="windowWidth" :style="{zIndex: 1}"></app-header>
+    <div class="home">
+        <div class="home-container">
+            <app-header :scroll="scrolled" ></app-header>
 
-        <div class="hp1" v-bind:style="{height: windowHeight + 'px'}">
+            <div class="hp1" v-bind:style="{height: windowHeight + 'px'}">
 
-            <app-home-one :height="windowHeight" :width="windowWidth" :scroll="scrolled"
+                <app-home-one :height="windowHeight" :width="windowWidth" :scroll="scrolled"
                               v-on:scroll="handleScroll" :style="{opacity: 1 - scrolled / 550}"></app-home-one>
                 <app-arrow :height="windowHeight" :width="windowWidth"
                            v-on:scroll="handleScroll" :style="{opacity: 1 - scrolled / 400}"></app-arrow>
-        </div>
-        <div class="hp2">
-            <div class="hp2-container" :style="{flexDirection: windowWidth < 900 ? 'column' : ''}">
-                <app-home-two  v-for="each in content2" :height="windowHeight" :width="windowWidth"
-                               :icon="each.icon" :title="each.title"></app-home-two>
             </div>
-        </div>
+            <div class="hp2">
+                <div class="hp2-container" :style="{flexDirection: windowWidth < 900 ? 'column' : ''}">
+                    <app-home-two  v-for="each in content2" :height="windowHeight" :width="windowWidth"
+                                   :icon="each.icon" :title="each.title"></app-home-two>
+                </div>
+            </div>
             <app-home-three :height="windowHeight" :width="windowWidth"></app-home-three>
+        </div>
     </div>
 </template>
 
@@ -28,53 +30,17 @@
 
     import images from '../data/home/images.js';
     import panel2 from '../data/home/panel2.js';
+    import { mixin } from '../mixin';
 
 
 
     export default {
+        mixins: [mixin],
         data(){
             return {
                 image: images,
-                scrolled: 0,
                 content2: panel2,
-                windowWidth: 0,
-                windowHeight: 0
             }
-        },
-        methods: {
-            handleScroll () {
-                this.scrolled = window.scrollY;
-            },
-            getWindowWidth(event) {
-                this.windowWidth = document.documentElement.clientWidth;
-            },
-            getWindowHeight(event) {
-                this.windowHeight = document.documentElement.clientHeight;
-            }
-        },
-        computed: {
-            myFunc(){
-                return `Height: ${Math.round(this.windowHeight)}px \n Width: ${Math.round(this.windowWidth)}px`
-            }
-        },
-        created () {
-            window.addEventListener('scroll', this.handleScroll);
-        },
-        mounted(){
-            this.$nextTick(() => {
-                window.addEventListener('resize', this.getWindowWidth);
-                window.addEventListener('resize', this.getWindowHeight);
-
-                this.getWindowWidth();
-                this.getWindowHeight();
-            });
-        },
-        beforeDestroy(){
-            window.removeEventListener('resize', this.getWindowWidth);
-            window.removeEventListener('resize', this.getWindowHeight);
-        },
-        destroyed () {
-            window.addEventListener('scroll', this.handleScroll);
         },
         components: {
             appHeader: Header,
@@ -87,6 +53,13 @@
 </script>
 
 <style scoped>
+
+    .home{
+        background-image: url('../../dist/home.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
     .hp1{
         display: flex;
         justify-content: center;

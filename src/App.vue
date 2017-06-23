@@ -14,11 +14,11 @@
 </script>
 
 <style>
-    body{
-        margin: 0;
-        font-family: Roboto;
-        background-image: url('../dist/home.jpg');
-        background-size: cover;
-        background-attachment: fixed;
-    }
+   body{
+       margin: 0;
+       background: transparent;
+       font-family: Roboto;
+       height: 100%;
+       width: 100%;
+   }
 </style>

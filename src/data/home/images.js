@@ -5,6 +5,7 @@ import kitchen from '../../assets/Images/kitchen.jpg';
 import living from '../../assets/Images/living.jpg';
 import patio from '../../assets/Images/patio.jpg';
 import stairs from '../../assets/Images/stairs.jpg';
+import contact from '../../assets/Images/contact.jpg';
 
 
 
@@ -15,5 +16,6 @@ export default {
     floor,
     bed,
     patio,
-    living
+    living,
+    contact
 }

@@ -16,7 +16,7 @@
         data(){
             return{
                 myHeight: this.height,
-                myWidth: this.width
+                myWidth: this.width,
             }
         },
         methods: {
