@@ -2,13 +2,13 @@
     <div :class="{navbar: scroll < 550, 'nav-scroll': scroll >= 550}"
          :style="{zIndex: 1, backgroundColor: scroll < 550 ? 'transparent': 'rgba(0, 71, 126,0.95)'}">
         <div class="nav-left">
-            <router-link to="/" activeClass="active"><a href="#">tua construction</a></router-link>
+            <router-link to="/" activeClass="active"><a>tua construction</a></router-link>
         </div>
         <div class="right">
-            <a href="#">Services</a>
-            <a href="#">About Us</a>
-            <router-link to="/contact" activeClass="active"><a href="#">Contact</a></router-link>
-            <a href="#"><i class = "fa fa-facebook"></i></a>
+            <a>Services</a>
+            <a>About Us</a>
+            <router-link to="/contact" activeClass="active"><a>Contact</a></router-link>
+            <a><i class = "fa fa-facebook"></i></a>
         </div>
     </div>
 </template>
