@@ -119,6 +119,10 @@
 
     }
 
+    label{
+        font-family: Roboto;
+    }
+
     .radio1{
         display: flex;
         justify-content: space-between;
@@ -129,31 +133,35 @@
     }
 
     input[type=submit] {
+        font-family: Roboto;
         width: 100%;
         background-color: rgb(0, 71, 126);
         color: white;
         padding: 14px 7px;
-        margin: 8px 0;
         font-weight: 300;
         border: none;
-        border-radius: 4px;
+        border-radius: 1px;
         cursor: pointer;
         text-transform: uppercase;
         margin-top: 5%;
+        margin-bottom: 5%;
+        font-size: 1.2vw;
     }
 
     input[type=submit]:hover {
+        font-family: Roboto;
         background-color: rgb(0, 71, 126);
     }
 
     input[type=text], input[type=email], select {
+        font-family: Roboto;
         width: 100%;
         padding: 12px 7px;
         margin: 1% 0;
         margin-bottom: 3%;
         display: inline-block;
         border: 1.5px solid #ccc;
-        border-radius: 4px;
+        border-radius: 1px;
         box-sizing: border-box;
     }
 
@@ -163,7 +171,7 @@
         padding: 12px 7px;
         box-sizing: border-box;
         border: 1.5px solid #ccc;
-        border-radius: 4px;
+        border-radius: 1px;
         font-size: 16px;
         resize: none;
         font-family: Roboto;
