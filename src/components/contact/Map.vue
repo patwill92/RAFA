@@ -9,19 +9,18 @@
                 v-for="(m, index) in markers"
                 :position="m.position"
                 :clickable="true"
-                :draggable="true"
                 @click="getInfo"
         >
             <gmap-info-window
                     v-if="infoWindow"
-                    @click="!infoWindow">
-
+                    >
                 <div id="iw-container">
-                    <div class="iw-title"><p>Tua construction</p></div>
+                    <div class="iw-title"><p>Tua construction</p><a @click="getInfo" class="close-thik"></a></div>
                     <div class="iw-content">
-                        <div class="iw-subTitle"><p><strong>Address: </strong> 7301 NW 32nd Ave, Miami, FL 33147</p></div>
-                        <div class="iw-subTitle"><p><strong>Phone: </strong> <a>(305) 639-1100</a></p></div>
-                        <div class="iw-subTitle"><p><strong>Email: </strong><a>info@tuagroup.net</a></p></div>
+                        <p><strong>Address: </strong> <a href="https://goo.gl/maps/fJ1yssENGmL2">7301 NW 32nd Ave, Miami, FL 33147</a></p>
+                        <p><strong>Phone: </strong> <a href="tel:1-305-639-1100">(305) 639-1100</a></p>
+                        <p style="margin-bottom: 5px !important;"><strong>Email: </strong><a href="#" rel="nofollow" onclick="this.href='mailto:' +
+                        'tuagroup' + '@' + 'tuagroup.net'">info@tuagroup.net</a></p>
                     </div>
                 </div>
             </gmap-info-window>
@@ -48,26 +47,48 @@
             getInfo(){
                 this.infoWindow = !this.infoWindow;
             }
-        },
-        created(){
         }
     }
 </script>
 
 <style>
 
+    .close-thik{
+        color: white;
+        font: 14px/100% arial, sans-serif;
+        position: absolute;
+        right: 4px;
+        top: 5px;
+        text-decoration: none;
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        text-shadow: 0 1px 0 #fff;
+    }
+
+    .close-thik:after {
+        content: '✖';
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .close-thik:hover{
+        cursor: pointer;
+    }
+
     #iw-container  .iw-title {
+        text-transform: uppercase;
         font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 400;
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 0;
-        padding-right: 0;
         background-color: rgb(0, 71, 126);
         color: white;
         margin: 0;
-        border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
+        border-radius: 2px 2px 0 0;
+        position: relative;
     }
 
     .iw-title p{
@@ -79,21 +100,26 @@
     }
 
     .iw-content p{
-        margin-top: 8px !important;
-        margin-bottom: 8px !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
     }
 
     .iw-content{
-        padding-top: 3%;
+        visibility: visible !important;
+        z-index: 100000 !important;
     }
 
     .gm-style-iw {
-        width: 300px !important;
+        width: 270px !important;
         top: 15px !important;
         left: 0 !important;
-        background-color: #fff;
+        background-color: white;
         box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
         border-radius: 2px 2px 0 0;
+        z-index: 1;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
     }
 
     .gm-style div:nth-child(1) div:nth-child(4) div:nth-child(4) div:nth-child(1) div:nth-child(2) div:nth-child(1){
@@ -101,8 +127,7 @@
     }
 
     .gm-style div:nth-child(1) div:nth-child(4) div:nth-child(4) div:nth-child(1) div:nth-child(1) div:nth-child(2){
-        background-color: transparent !important;
-        box-shadow: none !important;
+        visibility: hidden;
     }
 
     .gm-style div:nth-child(1) div:nth-child(4) div:nth-child(4) div:nth-child(1) div:nth-child(1) div:nth-child(4){
@@ -128,6 +153,7 @@
         background-color: white;
         z-index: 1000000;
         box-shadow: none !important;
+        visibility: visible !important;
     }
 
 </style>
