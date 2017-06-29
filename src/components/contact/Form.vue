@@ -79,7 +79,7 @@
                 </p>
             </div>
         </form>
-        <div class="content column" >
+        <div class="content column" v-if="windowWidth > 768">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem error harum modi molestiae
                 placeat provident sit? At cupiditate, delectus id laborum
                 laudantium omnis, sunt temporibus tenetur velit veritatis vero voluptas.</p>

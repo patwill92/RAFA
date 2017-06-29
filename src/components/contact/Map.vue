@@ -53,6 +53,10 @@
 
 <style>
 
+    .vue-map-container{
+        margin-top: 0 !important;
+    }
+
     a{
         color: #0000EE !important;
         display: block;

@@ -1,8 +1,8 @@
 <template>
-    <div class = "column" style="padding-left: 3% !important; padding-right: 3% !important; padding-top: 3%">
+    <div class = "column" style="margin-bottom: 0;" :style="{'height': width <= 768 ? '260px !important' : '260px !important'}">
       <h3 class="title is-3 is-marginless" style="padding-bottom: 10%; position: relative">{{title}} <i :class="icon"></i></h3>
       <div class = "info">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+        <p>{{msg}}</p>
       </div>
     </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
   import panel2 from '../../data/home/panel2.js';
   export default {
-        props: ['icon', 'title', 'height', 'width'],
+        props: ['icon', 'title', 'height', 'width','msg'],
         data(){
             return{
               myHeight: this.height,

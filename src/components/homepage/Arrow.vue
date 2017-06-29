@@ -1,6 +1,6 @@
 <template>
     <div class="columns arrow bounce">
-        <a style="font-size: 2.0rem !important" class="column fa fa-angle-double-down" aria-hidden="true"></a>
+        <a style="font-size: 2.0rem !important; color: white !important" class="column fa fa-angle-double-down" aria-hidden="true"></a>
     </div>
 </template>
 

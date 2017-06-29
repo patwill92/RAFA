@@ -2,8 +2,10 @@
     <div class="is-fullwidth">
         <app-navbar style="width: 100% !important"></app-navbar>
         <app-banner></app-banner>
-        <h1 class="title has-text-centered" style="margin-bottom: 4%; margin-top: 4%" :class="{'is-3': windowWidth > 768, 'is-4': windowWidth <= 768}">We're quick to respond</h1>
-        <app-form></app-form>
+        <div style="background-color: white; padding-bottom: 4%">
+            <h1 class="title has-text-centered" style="margin-bottom: 4%; padding-top: 4%" :class="{'is-3': windowWidth > 768, 'is-4': windowWidth <= 768}">We're quick to respond</h1>
+            <app-form></app-form>
+        </div>
         <app-map style="margin-top: 4%"></app-map>
     </div>
 </template>
