@@ -6,6 +6,8 @@ import living from '../../assets/Images/living.jpg';
 import patio from '../../assets/Images/patio.jpg';
 import stairs from '../../assets/Images/stairs.jpg';
 import contact from '../../assets/Images/contact.jpg';
+import steel from '../../assets/Images/steel.jpg';
+
 
 
 
@@ -17,5 +19,6 @@ export default {
     bed,
     patio,
     living,
-    contact
+    contact,
+    steel
 }

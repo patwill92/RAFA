@@ -39,8 +39,9 @@
   }
 
     .info{
-        font-weight: 300;
-        letter-spacing: 1.5px;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+      color: #3c3f41;
     }
 
 </style>

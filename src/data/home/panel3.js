@@ -37,11 +37,11 @@ export default {
             selected: false
         },
         {
-            pic: images.patio,
+            pic: images.steel,
             height: 150,
             width: 350,
-            icon: 'icon icon-patio',
-            type: 'Patio',
+            icon: 'icon icon-crane',
+            type: 'Steel structures',
             selected: false
         },
         {
