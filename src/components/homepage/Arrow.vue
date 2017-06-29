@@ -1,19 +1,18 @@
 <template>
-    <div class="arrow bounce">
-        <a class="fa fa-angle-double-down" aria-hidden="true"></a>
+    <div class="columns arrow bounce">
+        <a style="font-size: 2.0rem !important" class="column fa fa-angle-double-down" aria-hidden="true"></a>
     </div>
 </template>
 
 <style scoped>
     .arrow {
-        text-align: center;
-        color: white;
+        text-align: center !important;
+        color: white !important;
         opacity: 1;
-        font-size: 2.0rem;
-        margin: 0;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
+        margin: 0 !important;
+        width: 100% !important;
+        position: absolute !important;
+        bottom: 0 !important;
     }
     .bounce {
         -moz-animation: bounce 2s infinite;

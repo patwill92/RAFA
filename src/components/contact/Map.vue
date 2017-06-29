@@ -17,9 +17,9 @@
                 <div id="iw-container">
                     <div class="iw-title"><p>Tua construction</p><a @click="getInfo" class="close-thik"></a></div>
                     <div class="iw-content">
-                        <p><strong>Address: </strong> <a href="https://goo.gl/maps/fJ1yssENGmL2">7301 NW 32nd Ave, Miami, FL 33147</a></p>
-                        <p><strong>Phone: </strong> <a href="tel:1-305-639-1100">(305) 639-1100</a></p>
-                        <p style="margin-bottom: 5px !important;"><strong>Email: </strong><a href="#" rel="nofollow" onclick="this.href='mailto:' +
+                        <p><strong>Address </strong> <a href="https://goo.gl/maps/fJ1yssENGmL2">7301 NW 32nd Ave, Miami, FL 33147</a></p>
+                        <p><strong>Phone </strong> <a href="tel:1-305-639-1100">(305) 639-1100</a></p>
+                        <p style="margin-bottom: 5px !important;"><strong>Email </strong><a href="#" rel="nofollow" onclick="this.href='mailto:' +
                         'tuagroup' + '@' + 'tuagroup.net'">info@tuagroup.net</a></p>
                     </div>
                 </div>
@@ -53,8 +53,14 @@
 
 <style>
 
+    a{
+        color: #0000EE !important;
+        display: block;
+        margin-top: 1%;
+    }
+
     .close-thik{
-        color: white;
+        color: white !important;
         font: 14px/100% arial, sans-serif;
         position: absolute;
         right: 4px;
@@ -68,12 +74,15 @@
 
     .close-thik:after {
         content: '✖';
+        color: white !important;
         width: 16px !important;
         height: 16px !important;
     }
 
     .close-thik:hover{
         cursor: pointer;
+        color: white !important;
+        text-decoration: none;
     }
 
     #iw-container  .iw-title {

@@ -1,105 +1,149 @@
 <template>
-        <form>
-            <p>Please fill required fields</p>
-            <div class="form-group">
-                <label for="firstname">First Name</label>
-                <input
-                        type="text"
-                        id="firstname"
-                        class="form-control"
-                        v-model="clientData.firstName">
+    <div class="columns" style="width: 95%; margin: auto;">
+        <form class="column" >
+            <div class="field">
+                <label class="label">Name</label>
+                <p class="control">
+                    <input v-model="name" class="input" type="text" placeholder="First and Last Name">
+                </p>
             </div>
-            <div class="form-group">
-                <label for="lastname">Last Name</label>
-                <input
-                        type="text"
-                        id="lastname"
-                        class="form-control"
-                        v-model="clientData.lastName">
+
+            <div class="field">
+                <label class="label">Phone Number</label>
+                <p class="control has-icons-left has-icons-right">
+                    <input v-model="number" id="phone" class="input" type="text" placeholder="Phone">
+                    <span class="icon is-small is-left">
+                        <i class="fa fa-phone"></i>
+                    </span>
+                </p>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                        type="email"
-                        id="email"
-                        class="form-control"
-                        v-model="clientData.email">
+
+            <div class="field">
+                <label class="label">Email</label>
+                <p class="control has-icons-left has-icons-right">
+                    <input v-model="email" class="input" :class="{'test': validate(email), 'is-danger': !validate(email)}" :style="{borderColor: !validate(email) ? '#ff3860' : 'rgb(219, 219, 219)'}" type="text" placeholder="Email input" value="hello@">
+                    <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                    <span v-if="!validate(email)" class="icon is-small is-right">
+                        <i class="fa fa-warning"></i>
+                    </span>
+                </p>
+                <p v-if="!validate(email)" class="help is-danger">This email is invalid</p>
             </div>
-            <div class="form-group form">
-                <div class="radio">
-                    <label style="display: inline-block; width: 50%;"
-                           for="phone">Phone</label>
-                    <label style="display: inline-block; width: 45%; margin-left: 5%;"
-                           for="radio">Preferred contact method</label>
-                </div>
-                <div id="radio" class="radio">
-                    <input
-                        style="width: 50%;"
-                        type="text"
-                        id="phone"
-                        class="form-control"
-                        v-model="clientData.number">
-                    <div class="radio1">
-                        <label for="mail">
-                            <input
-                                    type="radio"
-                                    id="mail"
-                                    value="Email"
-                                    v-model="priority"> Email
-                        </label>
-                        <label for="cell">
-                            <input
-                                    type="radio"
-                                    id="cell"
-                                    value="Phone"
-                                    v-model="priority"> Phone
-                        </label>
-                        <label for="any">
-                            <input
-                                    type="radio"
-                                    id="any"
-                                    value="Any"
-                                    v-model="priority"> Any
-                        </label>
-                    </div>
-                </div>
+
+            <div class="field">
+                <label class="label">Subject</label>
+                <p class="control has-icons-right">
+                    <span class="select">
+                      <select>
+                        <option>Residential</option>
+                        <option>Commercial</option>
+                      </select>
+                        <span class="icon is-small is-right">
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </span>
+
+                </p>
             </div>
-            <div class="form-group">
-                <label for="message">Message</label><br>
-                <textarea
-                        id="message"
-                        rows="5"
-                        class="form-control"
-                        v-model="message"
-                        placeholder="What can we help you with?"></textarea>
+
+            <div class="field">
+                <label class="label">Message</label>
+                <p class="control">
+                    <textarea v-model="message" class="textarea" placeholder="How can we help you?"></textarea>
+                </p>
             </div>
-            <input type="submit" value="Submit">
+
+            <div class="field">
+                <label class="label">Preferred Contact Method</label>
+                <p class="control">
+                    <label class="radio">
+                        <input v-model="priority" type="radio" value="Phone">
+                        Phone
+                    </label>
+                    <label class="radio">
+                        <input v-model="priority" type="radio" value="Email">
+                        Email
+                    </label>
+                    <label class="radio">
+                        <input v-model="priority" type="radio" value="Any">
+                        Any
+                    </label>
+                </p>
+            </div>
+
+            <div class="field">
+                <p class="control">
+                    <button @click.prevent ="submit" class="button is-primary is-fullwidth">SUBMIT</button>
+                </p>
+            </div>
         </form>
+        <div class="content column" >
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem error harum modi molestiae
+                placeat provident sit? At cupiditate, delectus id laborum
+                laudantium omnis, sunt temporibus tenetur velit veritatis vero voluptas.</p>
+            <p style="font-weight: 500;">Not sure what to say?</p >
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores beatae culpa
+                    cupiditate magnam neque quo? Animi dicta et ipsam.</li>
+                <li>Dolore error fugiat itaque iure iusto laboriosam modi quas quis quod quos,
+                    sapiente temporibus ut veniam.</li>
+                <li>Ipsum dolor sit amet, upiditate delectus eligendi ipsum libero maxime
+                    reiciendis saepe sequi voluptas?</li>
+            </ul>
+        </div>
+    </div>
 </template>
 
 <script>
     import { mixin} from '../../mixin';
-    import { parse, format, asYouType } from 'libphonenumber-js';
-
+    import $ from 'jquery';
 
     export default{
         mixins: [mixin],
         data(){
             return{
-                clientData: {
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    number: ''
-                },
+                name: '',
+                email: '',
+                number: '',
                 message: '',
                 priority: 'Email',
-                isSubmitted: false
+                format: true
             }
         },
         methods: {
             submit(){
-                this.isSubmitted = true;
+              var sub = this.error(this.email)
+              if(sub){
+                $.ajax({
+                  url: "https://formspree.io/patrick.rw92@gmail.com",
+                  method: "POST",
+                  data: {
+                    name: this.name,
+                    email: this.email,
+                    number: this.number,
+                    method: this.priority,
+                    message: this.message
+                  },
+                  dataType: "json"
+                });
+              }else{
+                this.format = false
+              }
+            },
+            validate(email){
+                var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                regex = regex.test(email);
+                if(this.format || regex){
+                  return true
+                } else {
+                  return false
+                }
+            },
+            error(email){
+              var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+              return regex.test(email);
             }
         },
         created(){
@@ -112,83 +156,96 @@
 
 <style scoped>
 
-    p{
-        color: #555555;
-        margin-bottom: 5%;
-        font-weight: bold;
 
+    .select:after {
+        display: none !important;
     }
 
-    label{
-        font-family: Roboto;
+    select:focus{
+        border-color: rgb(0, 71, 126) !important;
     }
 
-    .radio1{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
-        width: 40%;
-        margin-left: 4%;
+    input:focus{
+        border-color: rgb(0, 71, 126);
     }
 
-    input[type=submit] {
-        font-family: Roboto;
-        width: 100%;
-        background-color: rgb(0, 71, 126);
-        color: white;
-        padding: 14px 7px;
-        font-weight: 300;
-        border: none;
-        border-radius: 1px;
-        cursor: pointer;
-        text-transform: uppercase;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        font-size: 1.2vw;
+    textarea:focus{
+        border-color: rgb(0, 71, 126) !important;
     }
 
-    input[type=submit]:hover {
-        font-family: Roboto;
-        background-color: rgb(0, 71, 126);
+    .test:focus{
+        border-color: rgb(0, 71, 126) !important;
     }
 
-    input[type=text], input[type=email], select {
-        font-family: Roboto;
-        width: 100%;
-        padding: 12px 7px;
-        margin: 1% 0;
-        margin-bottom: 3%;
-        display: inline-block;
-        border: 1.5px solid #ccc;
-        border-radius: 1px;
-        box-sizing: border-box;
+    /*p{*/
+        /*color: #555555;*/
+        /*margin-bottom: 5%;*/
+        /*font-weight: bold;*/
+
+    /*}*/
+
+    /*label{*/
+        /*font-family: Roboto;*/
+    /*}*/
+
+    /*.radio1{*/
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+        /*flex-direction: row;*/
+        /*align-items: center;*/
+        /*width: 40%;*/
+        /*margin-left: 4%;*/
+    /*}*/
+
+    button{
+        background-color: rgb(0, 71, 126) !important;
+        color: white !important;
+        cursor: pointer !important;
+        text-transform: uppercase !important;
+        font-size: 1.2rem !important;
     }
 
-    textarea {
-        width: 100%;
-        height: 150px;
-        padding: 12px 7px;
-        box-sizing: border-box;
-        border: 1.5px solid #ccc;
-        border-radius: 1px;
-        font-size: 16px;
-        resize: none;
-        font-family: Roboto;
-    }
+    /*input[type=submit]:hover {*/
+        /*font-family: Roboto;*/
+        /*background-color: rgb(0, 71, 126);*/
+    /*}*/
 
-    label{
-        display: block;
-    }
+    /*input[type=text], input[type=email], select {*/
+        /*font-family: Roboto;*/
+        /*width: 100%;*/
+        /*padding: 12px 7px;*/
+        /*margin: 1% 0;*/
+        /*margin-bottom: 3%;*/
+        /*display: inline-block;*/
+        /*border: 1.5px solid #ccc;*/
+        /*border-radius: 1px;*/
+        /*box-sizing: border-box;*/
+    /*}*/
 
-    .radio{
-        display: flex;
-        justify-content: flex-start;
-    }
-    form{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        font-weight: 400;
-    }
+    /*textarea {*/
+        /*width: 100%;*/
+        /*height: 150px;*/
+        /*padding: 12px 7px;*/
+        /*box-sizing: border-box;*/
+        /*border: 1.5px solid #ccc;*/
+        /*border-radius: 1px;*/
+        /*font-size: 16px;*/
+        /*resize: none;*/
+        /*font-family: Roboto;*/
+    /*}*/
+
+    /*label{*/
+        /*display: block;*/
+    /*}*/
+
+    /*.radio{*/
+        /*display: flex;*/
+        /*justify-content: flex-start;*/
+    /*}*/
+    /*form{*/
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+        /*flex-direction: column;*/
+        /*font-weight: 400;*/
+    /*}*/
 </style>

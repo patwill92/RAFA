@@ -15,6 +15,9 @@ module.exports = {
           }
       })
   ],
+  node: {
+      fs: "empty"
+  },
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -27,8 +30,6 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
           // other vue-loader options go here
         }
       },

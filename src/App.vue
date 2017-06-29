@@ -13,7 +13,9 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+    @import "~bulma/sass/utilities/_all";
+
    body{
        margin: 0;
        background: transparent;
