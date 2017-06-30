@@ -1,7 +1,7 @@
 <template>
     <nav class="nav is-fullwidth has-shadow" >
         <div class="nav-left">
-              <router-link to="/" activeClass="active" class="nav-item is-marginless" tag="a"><a style="font-size: 1.3rem">tua construction</a></router-link>
+              <router-link to="/" activeClass="active" class="nav-item is-marginless" tag="a"><a style="font-size: 1.3rem">tua group</a></router-link>
         </div>
         <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
         <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
