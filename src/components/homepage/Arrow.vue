@@ -1,13 +1,13 @@
 <template>
     <div class="columns arrow bounce">
-        <a style="font-size: 2.0rem !important; color: white !important" class="column fa fa-angle-double-down" aria-hidden="true"></a>
+        <a style="font-size: 2.0rem !important; color: rgb(0, 71, 126) !important" class="column fa fa-angle-double-down" aria-hidden="true"></a>
     </div>
 </template>
 
 <style scoped>
     .arrow {
         text-align: center !important;
-        color: white !important;
+        color: rgb(0, 71, 126) !important;
         opacity: 1;
         margin: 0 !important;
         width: 100% !important;

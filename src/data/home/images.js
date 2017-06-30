@@ -7,6 +7,7 @@ import patio from '../../assets/Images/patio.jpg';
 import stairs from '../../assets/Images/stairs.jpg';
 import contact from '../../assets/Images/contact.jpg';
 import steel from '../../assets/Images/steel.jpg';
+import bath from '../../assets/Images/bath.jpg';
 
 
 
@@ -20,5 +21,6 @@ export default {
     patio,
     living,
     contact,
-    steel
+    steel,
+    bath
 }

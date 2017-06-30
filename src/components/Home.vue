@@ -1,13 +1,7 @@
 <template>
-    <div class="background-pic" style="background-color: rgba(0, 71, 126, 0.7) !important;">
+    <div class="background-pic" style="background-color: rgba(255,255,255, 0.1) !important;">
         <app-home-one></app-home-one>
-        <div class="is-fullwidth" style="background-color: #f1f1f1 !important;" :style="{'padding-top': windowWidth > 768 ? '4% !important' :
-                    '12% !important', 'padding-bottom': windowWidth > 768 ? '0 !important' :
-                    '0 !important'}">
-            <div class="columns" style="width: 90%; margin: auto;">
-                <app-home-two  v-for="each in content2" :icon="each.icon" :title="each.title" :msg="each.ms" :width="windowWidth"></app-home-two>
-            </div>
-        </div>
+        <app-home-two></app-home-two>
         <app-home-three></app-home-three>
     </div>
 </template>
