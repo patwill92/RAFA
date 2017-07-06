@@ -1,41 +1,40 @@
 <template>
-  <nav class="nav" style="border-bottom: 0.5px solid lightgray !important"
-       :style="{'width': windowWidth + 'px'}"
-       :class="{'b' : scrolled > 400, 'x' : scrolled <= 400, 'short': scrolled > 400, 'tall': scrolled <= 400}">
-    <div class="nav-left" style="border-bottom: 0.5px solid lightgray !important" :class="{'b' : scrolled > 400, 'x' : scrolled <= 400, 'short': scrolled > 400, 'tall': scrolled <= 400}">
+  <nav class="nav short" style="border-bottom: 0.5px solid lightgray !important"
+       :style="{'width': windowWidth + 'px'}">
+    <div class="nav-left short" style="border-bottom: 0.5px solid lightgray !important">
       <router-link to="/" activeClass="active" class="nav-item is-marginless" tag="a">
-        <a style="font-size: 1.5rem" :class="{'w' : scrolled > 400, 'bl' : scrolled <= 400}">tua group</a>
+        <a style="font-size: 1.5rem" class="bl">tua group</a>
       </router-link>
     </div>
     <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
     <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
     <span id="nav-toggle" class="nav-toggle" @click="active = !active"
           style="box-shadow: none; border-bottom: 0.5px solid lightgray !important"
-          :class="{'is-active': active, 'short': scrolled > 400, 'tall': scrolled <= 400}">
-                          <span :class="{'x' : scrolled > 400, 'b' : scrolled <= 400}"></span>
-                          <span :class="{'x' : scrolled > 400, 'b' : scrolled <= 400}"></span>
-                          <span :class="{'x' : scrolled > 400, 'b' : scrolled <= 400}"></span>
+          :class="{'is-active': active}">
+                          <span class="b"></span>
+                          <span class="b"></span>
+                          <span class="b"></span>
                         </span>
 
     <!-- This "nav-menu" is hidden on mobile -->
     <!-- Add the modifier "is-active" to display it on mobile -->
     <div class="nav-right nav-menu" :class="{'is-active': active}"
          style="box-shadow: none;">
-      <router-link to="/" activeClass="active" tag="a" class="nav-item" :class="{'b' : scrolled > 400, 'x' : scrolled <= 400}">
-        <a :class="{'w' : scrolled > 400, 'bl' : scrolled <= 400}">Home</a>
+      <router-link to="/" activeClass="active" tag="a" class="nav-item">
+        <a class="bl">Home</a>
       </router-link>
-      <router-link to="/services" activeClass="active" tag="a" class="nav-item" :class="{'b' : scrolled > 400, 'x' : scrolled <= 400}">
-        <a :class="{'w' : scrolled > 400, 'bl' : scrolled <= 400}">Services</a>
+      <router-link to="/services" activeClass="active" tag="a" class="nav-item">
+        <a class="bl">Services</a>
       </router-link>
-      <router-link to="about" activeClass="active" tag="a" class="nav-item" :class="{'b' : scrolled > 400, 'x' : scrolled <= 400}">
-        <a :class="{'w' : scrolled > 400, 'bl' : scrolled <= 400}">About</a>
+      <router-link to="about" activeClass="active" tag="a" class="nav-item">
+        <a class="bl">About</a>
       </router-link>
-      <router-link to="/contact" activeClass="active" tag="a" class="nav-item" :class="{'b' : scrolled > 400, 'x' : scrolled <= 400}">
-        <a :class="{'w' : scrolled > 400, 'bl' : scrolled <= 400}">Contact</a>
+      <router-link to="/contact" activeClass="active" tag="a" class="nav-item">
+        <a class="bl">Contact</a>
       </router-link>
       <router-link to="/contact" activeClass="active"
-                   tag="a" class="nav-item" :class="{'b' : scrolled > 400, 'x' : scrolled <= 400}">
-        <a :class="{'w' : scrolled > 400, 'bl' : scrolled <= 400}" class="fa fa-facebook"></a>
+                   tag="a" class="nav-item">
+        <a  class="fa fa-facebook bl"></a>
       </router-link>
     </div>
   </nav>

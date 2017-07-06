@@ -13,9 +13,9 @@
                    v-on:mouseenter="content3[index].selected = true" v-on:mouseleave="content3[index].selected = false">
                 <div class="background">
                   <transition name="slide" mode="out-in">
-                    <button class="btn" v-if="content3[index].selected"><span>View Projects</span></button>
-                    <button class="bt" v-if="windowWidth <= 768"><span>View Projects</span></button>
+                    <button class="btn" v-if="content3[index].selected && windowWidth > 768"><span>View Projects</span></button>
                   </transition>
+                  <button class="bt" v-if="windowWidth <= 768">View Projects</button>
                 </div>
               </div>
               <header class="card-header">
@@ -244,22 +244,12 @@
     background-color: transparent;
     border: 1px solid white;
     color: white;
-    text-align: center;
     width: 55%;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    justify-content: center;
     padding-bottom: 5%;
     padding-top: 5%;
-  }
-
-  .bt span {
-    color: white;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
   }
 
   .btn span:after {
@@ -281,7 +271,7 @@
   }
 
   button{
-    text-align: center !important;
+    /*text-align: center !important;*/
   }
 
   .slide-enter-active {

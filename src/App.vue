@@ -11,9 +11,8 @@
 </script>
 
 <style>
-    body{
-        background-image: url('../dist/home.jpg') !important;
-        background-size: cover !important;
-        background-attachment: fixed !important;
+    html, body {
+        height: 100%;
+        margin: 0;
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="background-pic" style="background-color: rgba(255,255,255, 0.1) !important;">
+    <div class="background-pic">
         <app-home-one></app-home-one>
         <app-home-two></app-home-two>
         <app-home-three></app-home-three>

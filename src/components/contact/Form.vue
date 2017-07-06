@@ -21,7 +21,7 @@
             <div class="field">
                 <label class="label">Email</label>
                 <p class="control has-icons-left has-icons-right">
-                    <input v-model="email" class="input" :class="{'test': validate(email), 'is-danger': !validate(email)}" :style="{borderColor: !validate(email) ? '#ff3860' : 'rgb(219, 219, 219)'}" type="text" placeholder="Email input" value="hello@">
+                    <input v-model="email" class="input" :class="{'test': validate(email), 'is-danger': !validate(email)}" :style="{borderColor: !validate(email) ? '#ff3860' : 'rgb(219, 219, 219)'}" type="text" placeholder="Email" value="hello@">
                     <span class="icon is-small is-left">
                         <i class="fa fa-envelope"></i>
                     </span>

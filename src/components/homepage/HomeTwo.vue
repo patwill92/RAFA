@@ -91,12 +91,12 @@
 
   .card-footer-item{
     height: 60px !important;
-    color: black;
+    color: rgb(0, 71, 126) !important;
     background-color: rgba(240,244,247,0.3) !important;
+    margin: 0 !important;
   }
 
   .card-footer-item:hover{
-    color: rgb(0, 71, 126) !important;
     font-weight: 400;
     font-size: 1.1rem;
   }
